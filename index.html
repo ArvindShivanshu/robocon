@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team Robocon | Member ID Card</title>
+  <meta name="description" content="Official Team Robocon Member Identity Card">
+  <!-- Google Fonts: Aldrich (Robocon official font), Space Grotesk, and Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Aldrich&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Ambient Grid Overlay -->
+  <div class="bg-grid-overlay" aria-hidden="true"></div>
+  
+  <!-- Interactive Connecting Particles Canvas (Matching Robocon Website Theme) -->
+  <canvas id="particles-canvas" class="particles-bg" aria-hidden="true"></canvas>
+
+  <!-- Main Viewport Centering Stage -->
+  <main class="badge-stage">
+    
+    <div class="badge-assembly">
+      <!-- Realistic Lanyard System Directly Connected to Card -->
+      <div class="lanyard-system" aria-hidden="true">
+        <!-- Hanging Ribbon Strap with Robocon Logo and Name Print -->
+        <div class="lanyard-strap">
+          <div class="strap-inner">
+            <div class="strap-brand-pattern">
+              <div class="strap-item">
+                <img src="logo.svg" alt="Robocon Logo" class="strap-logo-img">
+                <span class="strap-name">ROBOCON</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- High-Fidelity 3D Metallic Clasp Hardware Assembly -->
+        <div class="lanyard-hardware">
+          <svg class="clasp-hardware-svg" viewBox="0 0 44 78" width="44" height="78" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <!-- Metallic Gradients for Chrome & Brushed Gunmetal Finish -->
+              <linearGradient id="metalCrimp" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#8E96A4"/>
+                <stop offset="25%" stop-color="#555D6C"/>
+                <stop offset="60%" stop-color="#282C34"/>
+                <stop offset="85%" stop-color="#404753"/>
+                <stop offset="100%" stop-color="#1E2229"/>
+              </linearGradient>
+
+              <linearGradient id="chromeBody" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#FFFFFF"/>
+                <stop offset="20%" stop-color="#D1D6E0"/>
+                <stop offset="45%" stop-color="#7B8494"/>
+                <stop offset="70%" stop-color="#3C4350"/>
+                <stop offset="90%" stop-color="#9AA3B2"/>
+                <stop offset="100%" stop-color="#565E6D"/>
+              </linearGradient>
+
+              <linearGradient id="chromeHook" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#707A8A"/>
+                <stop offset="30%" stop-color="#FFFFFF"/>
+                <stop offset="65%" stop-color="#8F98A8"/>
+                <stop offset="100%" stop-color="#3B4250"/>
+              </linearGradient>
+
+              <linearGradient id="goldAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#FFF2B2"/>
+                <stop offset="50%" stop-color="#D4AF37"/>
+                <stop offset="100%" stop-color="#7A6016"/>
+              </linearGradient>
+
+              <linearGradient id="hookInner" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#14171E"/>
+                <stop offset="100%" stop-color="#2D333F"/>
+              </linearGradient>
+
+              <!-- Drop Shadows for Realistic Depth -->
+              <filter id="claspShadow" x="-20%" y="-10%" width="150%" height="150%">
+                <feDropShadow dx="0" dy="4" stdDeviation="2.5" flood-color="#000000" flood-opacity="0.85"/>
+              </filter>
+            </defs>
+
+            <!-- Clasp Group with Depth Shadow -->
+            <g filter="url(#claspShadow)">
+              <!-- 1. Ribbon End Crimp Clamp -->
+              <rect x="5" y="0" width="34" height="9" rx="1.5" fill="url(#metalCrimp)" stroke="#9FA7B6" stroke-width="0.75"/>
+              <rect x="7" y="2" width="30" height="1" fill="rgba(255,255,255,0.4)"/>
+              <!-- Gold Center Fastener Rivet -->
+              <rect x="16" y="3" width="12" height="3" rx="1" fill="url(#goldAccent)"/>
+
+              <!-- 2. Metal Swivel Loop Ring -->
+              <path d="M14 9 C14 16, 30 16, 30 9" stroke="url(#chromeBody)" stroke-width="3" stroke-linecap="round" fill="none"/>
+
+              <!-- 3. Swivel Barrel Collar -->
+              <rect x="17" y="14" width="10" height="9" rx="1.5" fill="url(#chromeBody)" stroke="#9AA3B2" stroke-width="0.5"/>
+              <line x1="17" y1="18.5" x2="27" y2="18.5" stroke="#252A33" stroke-width="0.75"/>
+              <circle cx="22" cy="18.5" r="1.5" fill="url(#goldAccent)"/>
+
+              <!-- 4. Lobster Claw / Snap Hook Body -->
+              <path d="M17 23 L27 23 L29 36 C29 42 27 46 22 47 C17 46 15 42 15 36 Z" fill="url(#chromeBody)" stroke="#8C95A5" stroke-width="0.5"/>
+              <!-- Specular Reflection Highlight -->
+              <path d="M17 24 L20 24 L18 36 C18 40 19 43 21 45" stroke="rgba(255,255,255,0.6)" stroke-width="1" stroke-linecap="round" fill="none"/>
+
+              <!-- 5. Spring Lever / Thumb Trigger -->
+              <path d="M28 27 L33 29 L32 35 L28 34 Z" fill="url(#chromeBody)" stroke="#7A8392" stroke-width="0.5"/>
+              <line x1="29" y1="30.5" x2="32" y2="31.5" stroke="#2A2E38" stroke-width="0.75"/>
+              <line x1="29" y1="32.5" x2="32" y2="33.5" stroke="#2A2E38" stroke-width="0.75"/>
+
+              <!-- 6. Heavy Curved Steel Hook passing down and through Slot -->
+              <!-- Outer Hook Loop -->
+              <path d="M17.5 45 C17.5 45, 14 52, 14 62 C14 70.5, 20 74, 22 74 C24 74, 30 70.5, 30 62 C30 54, 27 46, 27 46" 
+                    stroke="url(#chromeHook)" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+              <!-- Inner Hook Hole/Cavity to show realistic round steel wire -->
+              <path d="M19 47 C19 53, 17.5 59, 17.5 62 C17.5 68, 20.5 70.5, 22 70.5 C23.5 70.5, 26.5 68, 26.5 62 C26.5 57, 25 50, 25 47" 
+                    stroke="url(#hookInner)" stroke-width="1" stroke-linecap="round" fill="none"/>
+              <!-- Specular Light Catch on the Curved Steel Hook -->
+              <path d="M16 53 C15.5 58, 15.5 63, 16.5 67 C17.5 70, 19.5 72, 22 72" 
+                    stroke="rgba(255,255,255,0.7)" stroke-width="0.9" stroke-linecap="round" fill="none"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <!-- ID Card (Standard Height & Proportions) -->
+      <section class="id-card" id="robocon-id-card" aria-label="Team Robocon Identity Card">
+        
+        <!-- Card Top Area -->
+        <div class="card-top-section">
+          <!-- Top Slot Punch Cutout -->
+          <div class="punch-slot" aria-hidden="true">
+            <div class="punch-hole"></div>
+          </div>
+
+          <!-- Card Top Brand Header: Logo on Left, ROBOCON in Middle -->
+          <header class="card-header">
+            <div class="brand-lockup">
+              <div class="brand-emblem-wrap">
+                <img src="logo.svg" alt="SRM Team Robocon Official Logo" class="official-robocon-emblem">
+              </div>
+              <div class="brand-text">
+                <span class="brand-robocon">ROBOCON</span>
+              </div>
+            </div>
+          </header>
+
+          <!-- Decorative Divider -->
+          <div class="card-divider" aria-hidden="true">
+            <span class="divider-line"></span>
+            <span class="divider-notch"></span>
+            <span class="divider-line"></span>
+          </div>
+        </div>
+
+        <!-- Card Body Area -->
+        <div class="card-body-section">
+          <!-- Avatar Section (Circular Placeholder) -->
+          <div class="avatar-section">
+            <div class="avatar-wrapper">
+              <div class="avatar-glow"></div>
+              <div class="avatar-ring">
+                <div class="avatar-placeholder" id="member-avatar" role="img" aria-label="Member Profile Photo Placeholder">
+                  <!-- Minimalist Silhouette Glyph -->
+                  <svg class="avatar-glyph" viewBox="0 0 80 80" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="40" cy="30" r="14" fill="#94A3B8"/>
+                    <path d="M18 64 C18 49 28 46 40 46 C52 46 62 49 62 64" fill="#94A3B8"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Member Details Body -->
+          <div class="card-content">
+            <!-- Member Name -->
+            <h1 class="member-name">AARAV SHARMA</h1>
+            
+            <!-- Role Pill: PRESIDENT -->
+            <div class="role-container">
+              <div class="role-badge" id="member-role">
+                <span class="role-title">PRESIDENT</span>
+              </div>
+            </div>
+
+            <!-- Registration Number -->
+            <div class="reg-number-wrap">
+              <span class="reg-label">REG. NO</span>
+              <span class="reg-value" id="member-reg-no">RA2311003010142</span>
+            </div>
+
+            <!-- One-Line Bio / Tagline -->
+            <div class="bio-wrap">
+              <p class="member-bio" id="member-bio">
+                "Robotics Reimagined • Designing autonomous systems for ABU Robocon"
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Minimalist Card Footer -->
+        <footer class="card-footer">
+          <div class="barcode-container" aria-hidden="true">
+            <div class="barcode-lines"></div>
+            <span class="barcode-text">ROBOCON-2026-ID</span>
+          </div>
+        </footer>
+
+      </section>
+    </div>
+  </main>
+
+  <!-- Lightweight Interactive Particles Network (Robocon tsparticles Hover Attraction) -->
+  <script>
+    (function () {
+      const canvas = document.getElementById('particles-canvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      let width, height;
+      let particles = [];
+      const particleCount = 75;
+      const maxDistance = 115;
+      const mouse = { x: null, y: null, radius: 160 };
+
+      function resize() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+      }
+
+      window.addEventListener('resize', resize);
+      resize();
+
+      // Track mouse hover position
+      window.addEventListener('mousemove', function (e) {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+      });
+
+      window.addEventListener('mouseleave', function () {
+        mouse.x = null;
+        mouse.y = null;
+      });
+
+      // Particle Constructor
+      class Particle {
+        constructor() {
+          this.x = Math.random() * width;
+          this.y = Math.random() * height;
+          this.vx = (Math.random() - 0.5) * 0.75;
+          this.vy = (Math.random() - 0.5) * 0.75;
+          this.radius = Math.random() * 2 + 1.2;
+          
+          // Color distribution matching Robocon website in Dark Mode
+          const rand = Math.random();
+          if (rand < 0.20) {
+            this.color = '#E50914'; // Robocon Red
+            this.glow = 'rgba(229, 9, 20, 0.6)';
+          } else if (rand < 0.35) {
+            this.color = '#0070F3'; // Robocon Blue
+            this.glow = 'rgba(0, 112, 243, 0.6)';
+          } else {
+            this.color = '#FFFFFF'; // Clean White
+            this.glow = 'rgba(255, 255, 255, 0.4)';
+          }
+        }
+
+        update() {
+          // Normal floating movement
+          this.x += this.vx;
+          this.y += this.vy;
+
+          // Bounce off screen boundaries
+          if (this.x < 0 || this.x > width) this.vx *= -1;
+          if (this.y < 0 || this.y > height) this.vy *= -1;
+
+          // Mouse Attraction / Reaction on Hover
+          if (mouse.x !== null && mouse.y !== null) {
+            const dx = mouse.x - this.x;
+            const dy = mouse.y - this.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+
+            if (dist < mouse.radius) {
+              const force = (mouse.radius - dist) / mouse.radius;
+              const angle = Math.atan2(dy, dx);
+              // Gently pull particles toward cursor
+              this.x += Math.cos(angle) * force * 1.5;
+              this.y += Math.sin(angle) * force * 1.5;
+            }
+          }
+        }
+
+        draw() {
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+          ctx.fillStyle = this.color;
+          ctx.shadowBlur = 6;
+          ctx.shadowColor = this.glow;
+          ctx.fill();
+          ctx.shadowBlur = 0;
+        }
+      }
+
+      // Initialize particles
+      for (let i = 0; i < particleCount; i++) {
+        particles.push(new Particle());
+      }
+
+      // Animation Loop
+      function animate() {
+        ctx.clearRect(0, 0, width, height);
+
+        // Update and draw particles
+        for (let i = 0; i < particles.length; i++) {
+          particles[i].update();
+          particles[i].draw();
+
+          // Connect nearby particles with lines
+          for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+
+            if (dist < maxDistance) {
+              const alpha = (1 - dist / maxDistance) * 0.32;
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.strokeStyle = `rgba(255, 255, 255, ${alpha})`;
+              ctx.lineWidth = 0.75;
+              ctx.stroke();
+            }
+          }
+
+          // Connect particles to mouse cursor when close
+          if (mouse.x !== null && mouse.y !== null) {
+            const mdx = particles[i].x - mouse.x;
+            const mdy = particles[i].y - mouse.y;
+            const mDist = Math.sqrt(mdx * mdx + mdy * mdy);
+
+            if (mDist < mouse.radius) {
+              const mAlpha = (1 - mDist / mouse.radius) * 0.45;
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(mouse.x, mouse.y);
+              ctx.strokeStyle = `rgba(229, 9, 20, ${mAlpha})`;
+              ctx.lineWidth = 0.9;
+              ctx.stroke();
+            }
+          }
+        }
+
+        requestAnimationFrame(animate);
+      }
+
+      animate();
+    })();
+  </script>
+</body>
+</html>

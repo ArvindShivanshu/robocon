@@ -1,0 +1,656 @@
+/* ==========================================================================
+   ROBOCON - OFFICIAL MEMBER ID BADGE STYLESHEET
+   Dark Background Canvas + Satin Platinum Light ID Badge
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Design Tokens & CSS Variables
+   -------------------------------------------------------------------------- */
+:root {
+  /* Dark Canvas Surfaces */
+  --color-page-bg: #050608;
+  
+  /* Satin Light Badge Surfaces ("Light mode but not too light") */
+  --color-card-bg-top: #E4E8EE;
+  --color-card-bg-mid: #D9DFE6;
+  --color-card-bg-bottom: #CCD3DC;
+  --color-card-border: rgba(255, 255, 255, 0.35);
+  --color-card-subtle: #CAD2DC;
+  
+  /* Brand Accents */
+  --color-robocon-red: #E50914;
+  --color-robocon-red-dark: #B9050F;
+  --color-robocon-red-bright: #FF2E3B;
+  --color-robocon-red-glow: rgba(229, 9, 20, 0.28);
+  --color-robocon-blue: #0070F3;
+  --color-robocon-blue-glow: rgba(0, 112, 243, 0.25);
+  --color-robocon-gold: #D4AF37;
+  
+  /* Typography on Light Card Surface */
+  --color-text-primary: #0A0F1D;     /* Deep Obsidian */
+  --color-text-secondary: #1E2638;   /* Deep Slate */
+  --color-text-body: #334155;        /* Charcoal */
+  --color-text-muted: #526175;       /* Steel */
+  --color-text-dim: #718096;         /* Medium Slate */
+  
+  /* Fonts */
+  --font-aldrich: 'Aldrich', 'Space Grotesk', -apple-system, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  
+  /* Dimensions (Standard CR80 Ratio) */
+  --card-width: 340px;
+  --card-min-height: 550px;
+  --card-radius: 16px;
+  --transition-smooth: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --------------------------------------------------------------------------
+   2. Reset & Document Setup
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+  background-color: var(--color-page-bg);
+  color: #FFFFFF;
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* --------------------------------------------------------------------------
+   3. Dark Background Atmosphere & Grid Overlay
+   -------------------------------------------------------------------------- */
+.bg-grid-overlay {
+  position: fixed;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.particles-bg {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* --------------------------------------------------------------------------
+   4. Viewport Centering Stage
+   -------------------------------------------------------------------------- */
+.badge-stage {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px 50px;
+  z-index: 10;
+}
+
+/* --------------------------------------------------------------------------
+   5. Badge Assembly & Realistic Connected Lanyard
+   -------------------------------------------------------------------------- */
+.badge-assembly {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+/* Lanyard System */
+.lanyard-system {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 25;
+  pointer-events: none;
+}
+
+/* Woven Textured Ribbon with Logo & Typography */
+.lanyard-strap {
+  position: relative;
+  width: 38px;
+  height: 140px;
+  background: repeating-linear-gradient(
+    0deg,
+    #9B070F 0px,
+    #9B070F 2px,
+    #E50914 2px,
+    #E50914 4px
+  );
+  border-left: 2.5px solid #73050B;
+  border-right: 2.5px solid #73050B;
+  box-shadow: 
+    -6px 0 16px rgba(0, 0, 0, 0.5),
+    6px 0 16px rgba(0, 0, 0, 0.5),
+    0 0 15px rgba(229, 9, 20, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Inner content wrapper strictly clipping text from spilling out bottom */
+.strap-inner {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 0;
+}
+
+/* Continuous strap extending seamlessly up to touch the very top edge of the viewport / screen (Zero vertical shadow to prevent seams) */
+.lanyard-strap::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: -2.5px;
+  right: -2.5px;
+  height: 2000px;
+  background: repeating-linear-gradient(
+    0deg,
+    #9B070F 0px,
+    #9B070F 2px,
+    #E50914 2px,
+    #E50914 4px
+  );
+  border-left: 2.5px solid #73050B;
+  border-right: 2.5px solid #73050B;
+  box-shadow: 
+    -6px 0 16px rgba(0, 0, 0, 0.5),
+    6px 0 16px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  z-index: 25;
+}
+
+/* Strap Repeating Brand Pattern */
+.strap-brand-pattern {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.strap-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.strap-logo-img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.95));
+}
+
+.strap-name {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  font-family: var(--font-aldrich);
+  font-size: 8px;
+  letter-spacing: 0.26em;
+  color: #FFFFFF;
+  white-space: nowrap;
+  font-weight: 700;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.95);
+}
+
+/* Realistic Metallic Clasp Hardware Vector Assembly */
+.lanyard-hardware {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -1px;
+  margin-bottom: -36px; /* Positions the 3D metal hook seamlessly through the punch slot */
+  z-index: 30;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.9));
+}
+
+.clasp-hardware-svg {
+  display: block;
+  overflow: visible;
+}
+
+/* --------------------------------------------------------------------------
+   6. Robocon ID Card Container (Satin Platinum Light Badge)
+   -------------------------------------------------------------------------- */
+.id-card {
+  position: relative;
+  width: 100%;
+  max-width: var(--card-width);
+  min-height: var(--card-min-height);
+  background: linear-gradient(
+    165deg, 
+    var(--color-card-bg-top) 0%, 
+    var(--color-card-bg-mid) 50%, 
+    var(--color-card-bg-bottom) 100%
+  );
+  border-radius: var(--card-radius);
+  border: 1px solid var(--color-card-border);
+  padding: 16px 22px 20px;
+  box-shadow: 
+    0 30px 65px -15px rgba(0, 0, 0, 0.92),
+    0 0 35px rgba(229, 9, 20, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8),
+    inset 0 0 15px rgba(255, 255, 255, 0.35);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  transition: var(--transition-smooth);
+  backdrop-filter: blur(12px);
+  overflow: hidden;
+  z-index: 10;
+}
+
+/* Subtle Technical Ambient Top Accent Bar */
+.id-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3.5px;
+  background: linear-gradient(90deg, transparent 0%, var(--color-robocon-red) 50%, transparent 100%);
+  opacity: 0.95;
+}
+
+/* Card Hover Elevation */
+.badge-assembly:hover .id-card {
+  transform: translateY(-3px);
+  box-shadow: 
+    0 40px 80px -18px rgba(0, 0, 0, 0.96),
+    0 0 45px rgba(229, 9, 20, 0.24),
+    inset 0 1px 0 #FFFFFF,
+    inset 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+/* --------------------------------------------------------------------------
+   7. Top Section & Punch Slot
+   -------------------------------------------------------------------------- */
+.card-top-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.punch-slot {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: -6px;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 5;
+}
+
+.punch-hole {
+  width: 40px;
+  height: 8px;
+  background: #080B10;
+  border-radius: 4px;
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 
+    inset 0 2px 5px rgba(0, 0, 0, 0.98),
+    0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+/* --------------------------------------------------------------------------
+   8. Card Header (Official Robocon Branding - Left Logo + Middle Title)
+   -------------------------------------------------------------------------- */
+.card-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.brand-lockup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.brand-emblem-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.official-robocon-emblem {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 2px 6px rgba(0, 94, 184, 0.25));
+}
+
+.brand-text {
+  display: flex;
+  align-items: center;
+}
+
+.brand-robocon {
+  font-family: var(--font-aldrich);
+  font-size: 23px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  letter-spacing: 0.14em;
+  line-height: 1;
+}
+
+/* --------------------------------------------------------------------------
+   9. Geometric Divider
+   -------------------------------------------------------------------------- */
+.card-divider {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  opacity: 0.85;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(15, 23, 42, 0.16), transparent);
+}
+
+.divider-notch {
+  width: 6px;
+  height: 6px;
+  background: var(--color-robocon-red);
+  transform: rotate(45deg);
+  margin: 0 6px;
+  box-shadow: 0 0 6px var(--color-robocon-red-glow);
+}
+
+/* --------------------------------------------------------------------------
+   10. Card Body Section & Avatar Placeholder
+   -------------------------------------------------------------------------- */
+.card-body-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+}
+
+.avatar-section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.avatar-wrapper {
+  position: relative;
+  width: 112px;
+  height: 112px;
+}
+
+/* Ambient Radial Glow behind Avatar */
+.avatar-glow {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--color-robocon-red-glow) 0%, transparent 70%);
+  filter: blur(8px);
+  z-index: 1;
+}
+
+/* Dual-Tone Outer Gradient Ring */
+.avatar-ring {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  padding: 3.5px;
+  background: linear-gradient(135deg, var(--color-robocon-red) 0%, var(--color-robocon-blue) 100%);
+  box-shadow: 
+    0 0 16px rgba(229, 9, 20, 0.28),
+    0 4px 12px rgba(0, 0, 0, 0.18);
+  z-index: 2;
+}
+
+/* Circular Placeholder Container */
+.avatar-placeholder {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #EFF3F8 0%, #CCD3DF 100%);
+  border: 2px solid #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.avatar-glyph {
+  width: 68%;
+  height: 68%;
+  opacity: 0.9;
+  filter: drop-shadow(0 1px 2px rgba(15, 23, 42, 0.18));
+}
+
+/* --------------------------------------------------------------------------
+   11. Member Information & Typography
+   -------------------------------------------------------------------------- */
+.card-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Member Name */
+.member-name {
+  font-family: var(--font-aldrich);
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--color-text-primary);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+/* Role Badge: PRESIDENT (Chamfered Tech Pill) */
+.role-container {
+  margin-bottom: 14px;
+}
+
+.role-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 20px;
+  background: linear-gradient(
+    135deg, 
+    rgba(229, 9, 20, 0.12) 0%, 
+    rgba(229, 9, 20, 0.05) 100%
+  );
+  border: 1.5px solid var(--color-robocon-red);
+  border-radius: 4px;
+  box-shadow: 
+    0 2px 8px rgba(229, 9, 20, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  /* Chamfered corner styling */
+  clip-path: polygon(
+    6px 0%, calc(100% - 6px) 0%, 
+    100% 6px, 100% calc(100% - 6px), 
+    calc(100% - 6px) 100%, 6px 100%, 
+    0% calc(100% - 6px), 0% 6px
+  );
+}
+
+.role-title {
+  font-family: var(--font-aldrich);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--color-robocon-red-dark);
+}
+
+/* Registration Number */
+.reg-number-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--color-card-subtle);
+  padding: 5px 14px;
+  border-radius: 4px;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  margin-bottom: 16px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.reg-label {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--color-text-muted);
+}
+
+.reg-value {
+  font-family: var(--font-mono);
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--color-text-secondary);
+}
+
+/* One-Line Bio / Tagline */
+.bio-wrap {
+  width: 100%;
+  padding: 0 4px;
+  margin-bottom: 8px;
+}
+
+.member-bio {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--color-text-body);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  font-style: italic;
+}
+
+/* --------------------------------------------------------------------------
+   12. Card Footer (Barcode & Verification)
+   -------------------------------------------------------------------------- */
+.card-footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 14px;
+  border-top: 1px solid rgba(15, 23, 42, 0.1);
+}
+
+.barcode-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+  max-width: 190px;
+}
+
+/* CSS-Only Realistic Barcode Stripes */
+.barcode-lines {
+  width: 100%;
+  height: 22px;
+  background: repeating-linear-gradient(
+    90deg,
+    #0A0F1D 0px,
+    #0A0F1D 2px,
+    transparent 2px,
+    transparent 3px,
+    #0A0F1D 3px,
+    #0A0F1D 5px,
+    transparent 5px,
+    transparent 8px,
+    #0A0F1D 8px,
+    #0A0F1D 9px,
+    transparent 9px,
+    transparent 11px,
+    #0A0F1D 11px,
+    #0A0F1D 14px,
+    transparent 14px,
+    transparent 16px,
+    #0A0F1D 16px,
+    #0A0F1D 17px,
+    transparent 17px,
+    transparent 20px,
+    #0A0F1D 20px,
+    #0A0F1D 23px,
+    transparent 23px,
+    transparent 25px
+  );
+  opacity: 0.88;
+}
+
+.barcode-text {
+  font-family: var(--font-mono);
+  font-size: 8.5px;
+  letter-spacing: 0.22em;
+  color: var(--color-text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   13. Responsive Adaptations
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  .badge-stage {
+    padding: 30px 16px 30px;
+  }
+  
+  :root {
+    --card-width: 310px;
+    --card-min-height: 520px;
+  }
+  
+  .brand-robocon {
+    font-size: 20px;
+  }
+  
+  .member-name {
+    font-size: 19px;
+  }
+  
+  .member-bio {
+    font-size: 11.5px;
+  }
+}

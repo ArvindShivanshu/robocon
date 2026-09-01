@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="100%" height="100%">
+  <defs>
+    <!-- Stencil Horizontal Cutout Mask for Typography -->
+    <mask id="stencilMask">
+      <rect width="800" height="800" fill="white" />
+      <!-- Horizontal slicing slits across letters matching the official logo -->
+      <rect x="100" y="372" width="600" height="7" fill="black" />
+      <rect x="150" y="445" width="500" height="7" fill="black" />
+    </mask>
+  </defs>
+
+  <g id="robocon-official-logo">
+    <!-- ==========================================
+         1. OUTER CHEVRON RING & ACCENT WINGS
+         ========================================== -->
+    <!-- Top-Left Accent Wing (Red & Blue chevrons) -->
+    <g transform="translate(68, 220) rotate(-28)">
+      <polygon points="0,0 22,-14 36,-14 14,0 36,14 22,14" fill="#005EB8" />
+      <polygon points="-16,-3 6,-17 20,-17 -2,-3 20,11 6,11" fill="#D90429" />
+    </g>
+
+    <!-- Top-Right Accent Wing (Red & Blue chevrons) -->
+    <g transform="translate(732, 220) rotate(28) scale(-1, 1)">
+      <polygon points="0,0 22,-14 36,-14 14,0 36,14 22,14" fill="#005EB8" />
+      <polygon points="-16,-3 6,-17 20,-17 -2,-3 20,11 6,11" fill="#D90429" />
+    </g>
+
+    <!-- Bottom Center Double Chevron Accent -->
+    <g transform="translate(400, 755)">
+      <!-- Top Red Chevron -->
+      <polygon points="0,-22 18,-6 10,-6 0,-15 -10,-6 -18,-6" fill="#D90429" />
+      <!-- Bottom Blue Chevron -->
+      <polygon points="0,-6 18,10 10,10 0,1 -10,10 -18,10" fill="#005EB8" />
+    </g>
+
+    <!-- Circular Blue Chevrons Ring -->
+    <g fill="#005EB8">
+      <!-- Top Arc -->
+      <polygon points="400,90 416,104 430,104 414,90 430,76 416,76" transform="rotate(-65 400 400)" />
+      <polygon points="400,90 416,104 430,104 414,90 430,76 416,76" transform="rotate(-45 400 400)" />
+      <polygon points="400,90 416,104 430,104 414,90 430,76 416,76" transform="rotate(-25 400 400)" />
+      <polygon points="400,90 416,104 430,104 414,90 430,76 416,76" transform="rotate(-5 400 400)" />
+      <polygon points="400,90 416,104 430,104 414,90 430,76 416,76" transform="rotate(15 400 400)" />
+      <polygon points="400,90 416,104 430,104 414,90 430,76 416,76" transform="rotate(35 400 400)" />
+      <polygon points="400,90 416,104 430,104 414,90 430,76 416,76" transform="rotate(55 400 400)" />
+      <polygon points="400,90 416,104 430,104 414,90 430,76 416,76" transform="rotate(75 400 400)" />
+      <!-- Right Arc -->
+      <polygon points="400,90 416,104 430,104 414,90 430,76 416,76" transform="rotate(105 400 400)" />
+      <polygon points="400,90 416,104 430,104 414,90 430,76 416,76" transform="rotate(125 400 400)" />
+      <polygon points="400,90 416,104 430,104 414,90 430,76 416,76" transform="rotate(145 400 400)" />
+      <!-- Bottom Arc -->
+      <polygon points="400,90 416,104 430,104 414,90 430,76 416,76" transform="rotate(165 400 400)" />
+      <polygon points="400,90 416,104 430,104 414,90 430,76 416,76" transform="rotate(195 400 400)" />
+      <polygon points="400,90 416,104 430,104 414,90 430,76 416,76" transform="rotate(215 400 400)" />
+      <!-- Left Arc -->
+      <polygon points="400,90 416,104 430,104 414,90 430,76 416,76" transform="rotate(235 400 400)" />
+      <polygon points="400,90 416,104 430,104 414,90 430,76 416,76" transform="rotate(255 400 400)" />
+      <polygon points="400,90 416,104 430,104 414,90 430,76 416,76" transform="rotate(285 400 400)" />
+    </g>
+
+    <!-- ==========================================
+         2. INVERTED MECHANICAL ROBOTICS SHIELD
+         ========================================== -->
+    <g stroke="#005EB8" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <!-- Outer Shield Hull Perimeter -->
+      <path d="M210,235 L310,235 L345,268 L455,268 L490,235 L590,235 L625,320 L495,630 L450,630 L440,642 L360,642 L350,630 L305,630 L175,320 Z" />
+
+      <!-- Outer Stepped Reinforcements -->
+      <path d="M225,250 L295,250 L315,268" />
+      <path d="M575,250 L505,250 L485,268" />
+      <path d="M260,250 L200,320 L310,595 L340,595" />
+      <path d="M540,250 L600,320 L490,595 L460,595" />
+
+      <!-- Top Center Optical Visor / Hex Core Mount -->
+      <polygon points="400,235 435,248 435,275 400,288 365,275 365,248" fill="rgba(0, 94, 184, 0.06)" />
+      <polygon points="400,246 422,254 422,269 400,277 378,269 378,254" fill="#005EB8" />
+      
+      <!-- Top Left/Right Hex Armor Nodes -->
+      <polygon points="280,248 300,256 300,268 280,276 260,268 260,256" />
+      <polygon points="520,248 540,256 540,268 520,276 500,268 500,256" />
+
+      <!-- Shoulder Circular Pivot Bearings -->
+      <circle cx="218" cy="324" r="10" />
+      <circle cx="582" cy="324" r="10" />
+
+      <!-- Center Tapered V-Keel Struts -->
+      <path d="M370,288 L370,325 L400,350 L430,325 L430,288" />
+      <path d="M375,325 L375,490 L400,535 L425,490 L425,325" />
+      <path d="M365,520 L400,580 L435,520" />
+      <line x1="400" y1="535" x2="400" y2="628" />
+
+      <!-- Side Angular Rib Truss Frames -->
+      <path d="M260,335 L345,520 L345,550" />
+      <path d="M540,335 L455,520 L455,550" />
+      <line x1="285" y1="385" x2="315" y2="385" />
+      <line x1="515" y1="385" x2="485" y2="385" />
+      <line x1="310" y1="440" x2="335" y2="440" />
+      <line x1="490" y1="440" x2="465" y2="440" />
+
+      <!-- Bottom Frame Teeth / Base Bracket -->
+      <path d="M350,630 L350,642 L450,642 L450,630" />
+    </g>
+
+    <!-- ==========================================
+         3. OFFICIAL STENCIL RED LOGO TYPOGRAPHY
+         ========================================== -->
+    <g fill="#B80000" mask="url(#stencilMask)">
+      <!-- Top Line: SRM TEAM -->
+      <g>
+        <!-- 'S' -->
+        <path d="M125,340 L185,340 L185,355 L145,355 L145,365 L185,372 L185,400 L125,400 L125,385 L165,385 L165,378 L125,370 Z" />
+        <!-- 'R' -->
+        <path d="M195,340 L245,340 L255,350 L255,368 L245,375 L255,400 L235,400 L228,375 L215,375 L215,400 L195,400 Z M215,355 L235,355 L235,365 L215,365 Z" />
+        <!-- 'M' -->
+        <path d="M265,340 L285,340 L300,370 L315,340 L335,340 L335,400 L315,400 L315,368 L305,388 L295,388 L285,368 L285,400 L265,400 Z" />
+        
+        <!-- Space -->
+        
+        <!-- 'T' -->
+        <path d="M380,340 L440,340 L440,358 L420,358 L420,400 L400,400 L400,358 L380,358 Z" />
+        <!-- 'E' -->
+        <path d="M450,340 L505,340 L505,358 L470,358 L470,363 L500,363 L500,378 L470,378 L470,383 L505,383 L505,400 L450,400 Z" />
+        <!-- 'A' -->
+        <path d="M515,340 L565,340 L575,355 L575,400 L555,400 L555,382 L535,382 L535,400 L515,400 Z M535,358 L555,358 L555,368 L535,368 Z" />
+        <!-- 'M' -->
+        <path d="M585,340 L605,340 L620,370 L635,340 L655,340 L655,400 L635,400 L635,368 L625,388 L615,388 L605,368 L605,400 L585,400 Z" />
+      </g>
+
+      <!-- Bottom Line: ROBOCON -->
+      <g transform="translate(30, 80)">
+        <!-- 'R' -->
+        <path d="M150,340 L205,340 L215,350 L215,368 L205,375 L215,400 L195,400 L188,375 L170,375 L170,400 L150,400 Z M170,355 L195,355 L195,365 L170,365 Z" />
+        <!-- 'O' -->
+        <path d="M225,340 L280,340 L290,350 L290,390 L280,400 L225,400 L215,390 L215,350 Z M235,358 L270,358 L270,382 L235,382 Z" />
+        <!-- 'B' -->
+        <path d="M300,340 L355,340 L365,350 L365,365 L355,370 L365,375 L365,390 L355,400 L300,400 Z M320,355 L345,355 L345,363 L320,363 Z M320,375 L345,375 L345,385 L320,385 Z" />
+        <!-- 'O' -->
+        <path d="M375,340 L430,340 L440,350 L440,390 L430,400 L375,400 L365,390 L365,350 Z M385,358 L420,358 L420,382 L385,382 Z" />
+        <!-- 'C' -->
+        <path d="M450,340 L505,340 L505,358 L470,358 L470,382 L505,382 L505,400 L450,400 L440,390 L440,350 Z" />
+        <!-- 'O' -->
+        <path d="M515,340 L570,340 L580,350 L580,390 L570,400 L515,400 L505,390 L505,350 Z M525,358 L560,358 L560,382 L525,382 Z" />
+        <!-- 'N' -->
+        <path d="M590,340 L610,340 L645,378 L645,340 L665,340 L665,400 L645,400 L610,362 L610,400 L590,400 Z" />
+      </g>
+    </g>
+  </g>
+</svg>
